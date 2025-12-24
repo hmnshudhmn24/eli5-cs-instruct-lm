@@ -1,0 +1,1 @@
+def generate_text(model,tokenizer,prompt,cfg): i=tokenizer(prompt,return_tensors='pt'); o=model.generate(**i,max_new_tokens=cfg['max_new_tokens']); return tokenizer.decode(o[0],skip_special_tokens=True)
